@@ -65,8 +65,7 @@ struct RedDisplayTheme: View {
         }
         
       }
-      .padding(.trailing, 16.0) // right margin
-      .padding(.bottom, 16.0) // Adjust height of display
+      .padding(.trailing, 16.0)
       .overlay {
 //        HexagonGridView(rows: 60, columns: 108, hexagonSize: 4, strokeColor: .black)
 //          .blendMode(.sourceAtop)
@@ -78,15 +77,15 @@ struct RedDisplayTheme: View {
           .opacity(0.5)
 
       }
-      ZStack {
-        VStack {
-          Rectangle().fill(Color.red.opacity(0.25)) // Any top detail here
-            .frame(height: 24)
-          Spacer()
-          Rectangle().fill(Color.red.opacity(0.25)) // Solar cells here
-            .frame(height: 48)
-        }
-      }
+//      ZStack {
+//        VStack {
+//          Rectangle().fill(Color.red.opacity(0.25)) // Any top detail here
+//            .frame(height: 24)
+//          Spacer()
+//          Rectangle().fill(Color.red.opacity(0.25)) // Solar cells here
+//            .frame(height: 56)
+//        }
+//      }
     }
   }
 }

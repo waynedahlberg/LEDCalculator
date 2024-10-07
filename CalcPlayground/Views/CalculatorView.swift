@@ -49,7 +49,7 @@ struct CalculatorView: View {
   var body: some View {
     ZStack {
       Rectangle()
-        .fill(Color.black)
+        .fill(Color.init(white: 0.1))
         .edgesIgnoringSafeArea(.all)
       
       GeometryReader { proxy in // whole screen is here
@@ -57,6 +57,7 @@ struct CalculatorView: View {
           ZStack {
             RoundedRectangle(cornerRadius: 13.33, style: .continuous)
               .fill(.black)
+//              .border(.blue, width: 10)
               .ignoresSafeArea(edges: [.top, .bottom])
 //              .overlay {
 //                GeometryReader { geo in
@@ -66,14 +67,20 @@ struct CalculatorView: View {
 //                }
 //              }
             VStack {
+              Rectangle().fill(Color.init(white: 0.1))
+                .ignoresSafeArea(edges: .top)
+                .border(Color.init(white: 0.125), width: 2, edges: .bottom)
+                .frame(height: 128)
               Spacer()
-              RedDisplayTheme(
+              BlueDisplayTheme(
                 largeFontSize: UIDevice.isTablet ? 64 : 44,
-                smallFontSize: UIDevice.isTablet ? 24 : 16, resultText: "3.14159265", computeText: " ")
-              .aspectRatio(2.32, contentMode: .fit)
+                smallFontSize: UIDevice.isTablet ? 24 : 16, resultText: "3.14159265", computeText: "1234567890+-/*")
+              .aspectRatio(2.32, contentMode: .fill)
               .frame(width: proxy.size.width)
+//              .border(.green, width: 4)
             }
           }
+//          .border(.yellow)
           
           Spacer() // if needed?
           
