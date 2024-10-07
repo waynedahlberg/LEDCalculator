@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DSEG7Classic-Regular.ttf</string>
+		<string>DSEG7Classic-LightItalic.ttf</string>
+		<string>DSEG7Classic-Light.ttf</string>
+		<string>DSEG7Classic-Italic.ttf</string>
+		<string>DSEG7Classic-BoldItalic.ttf</string>
+		<string>DSEG7Classic-Bold.ttf</string>
+		<string>DSEG7ClassicMini-Regular.ttf</string>
+		<string>DSEG7ClassicMini-LightItalic.ttf</string>
+		<string>DSEG7ClassicMini-Light.ttf</string>
+		<string>DSEG7ClassicMini-Italic.ttf</string>
+		<string>DSEG7ClassicMini-BoldItalic.ttf</string>
+		<string>DSEG7ClassicMini-Bold.ttf</string>
+		<string>DSEG14ClassicMini-Regular.ttf</string>
+		<string>DSEG14ClassicMini-LightItalic.ttf</string>
+		<string>DSEG14ClassicMini-Light.ttf</string>
+		<string>DSEG14ClassicMini-Italic.ttf</string>
+		<string>DSEG14ClassicMini-BoldItalic.ttf</string>
+		<string>DSEG14ClassicMini-Bold.ttf</string>
+		<string>DSEG14Classic-Regular.ttf</string>
+		<string>DSEG14Classic-LightItalic.ttf</string>
+		<string>DSEG14Classic-Light.ttf</string>
+		<string>DSEG14Classic-Italic.ttf</string>
+		<string>DSEG14Classic-BoldItalic.ttf</string>
+		<string>DSEG14Classic-Bold.ttf</string>
+	</array>
+</dict>
+</plist>
