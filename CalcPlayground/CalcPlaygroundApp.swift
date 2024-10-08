@@ -11,7 +11,7 @@ import SwiftUI
 struct CalcPlaygroundApp: App {
     var body: some Scene {
         WindowGroup {
-          ZCalculatorView()
+          CalculatorView()
         }
     }
 }
