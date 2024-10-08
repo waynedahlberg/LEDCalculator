@@ -55,28 +55,28 @@ class CalculatorViewModel: ObservableObject {
   private func setupButtons() {
     buttons = [
       [
-        CalculatorButton(id: "clear", svgName: "clear", character: "C", keyColor: .orange.opacity(0.5), charColor: .op1Gray, action: .clear),
+        CalculatorButton(id: "clear", svgName: "clear", character: "C", keyColor: .gray.opacity(0.1), charColor: .op1Gray, action: .clear),
         CalculatorButton(id: "undo", svgName: "undo", character: "del", keyColor: .clear, charColor: .op1Gray, action: .undo),
         CalculatorButton(id: "percentage", svgName: "percentage", character: "%", keyColor: .clear, charColor: .op1Gray, action: .percentage),
-        CalculatorButton(id: "divide", svgName: "divide", character: "/", keyColor: .blue.opacity(0.1), charColor: Color(hex: "003467"), action: .divide)
+        CalculatorButton(id: "divide", svgName: "divide", character: "/", keyColor: .clear, charColor: Color(hex: "003467"), action: .divide)
       ],
       [
         CalculatorButton(id: "7", svgName: "number-7", character: "7", keyColor: .clear, charColor: .black, action: .number(7)),
         CalculatorButton(id: "8", svgName: "number-8", character: "8", keyColor: .clear, charColor: .black, action: .number(8)),
         CalculatorButton(id: "9", svgName: "number-9", character: "9", keyColor: .clear, charColor: .black, action: .number(9)),
-        CalculatorButton(id: "multiply", svgName: "multiply", character: "X", keyColor: .blue.opacity(0.1), charColor: Color(hex: "003467"), action: .multiply)
+        CalculatorButton(id: "multiply", svgName: "multiply", character: "X", keyColor: .clear, charColor: Color(hex: "003467"), action: .multiply)
       ],
       [
         CalculatorButton(id: "4", svgName: "number-4", character: "4", keyColor: .clear, charColor: .black, action: .number(4)),
         CalculatorButton(id: "5", svgName: "number-5", character: "5", keyColor: .clear, charColor: .black, action: .number(5)),
         CalculatorButton(id: "6", svgName: "number-6", character: "6", keyColor: .clear, charColor: .black, action: .number(6)),
-        CalculatorButton(id: "subtract", svgName: "minus", character: "-", keyColor: .blue.opacity(0.1), charColor: Color(hex: "003467"), action: .subtract)
+        CalculatorButton(id: "subtract", svgName: "minus", character: "-", keyColor: .clear, charColor: Color(hex: "003467"), action: .subtract)
       ],
       [
         CalculatorButton(id: "1", svgName: "number-1", character: "1", keyColor: .clear, charColor: .black, action: .number(1)),
         CalculatorButton(id: "2", svgName: "number-2", character: "2", keyColor: .clear, charColor: .black, action: .number(2)),
         CalculatorButton(id: "3", svgName: "number-3", character: "3", keyColor: .clear, charColor: .black, action: .number(3)),
-        CalculatorButton(id: "add", svgName: "plus", character: "+", keyColor: .blue.opacity(0.1), charColor: Color(hex: "003467"), action: .add)
+        CalculatorButton(id: "add", svgName: "plus", character: "+", keyColor: .clear, charColor: Color(hex: "003467"), action: .add)
       ],
       [
         CalculatorButton(id: "negative", svgName: "negative", character: "-/+", keyColor: .clear, charColor: .op1Gray, action: .toggleSign),
