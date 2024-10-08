@@ -47,6 +47,10 @@ struct CalculatorView: View {
                       .shadow(color: .white.opacity(0.25), radius: 0.5, x: 0, y: 0.5)
                     
                     HStack(spacing: 16) {
+                      Toggle(isOn: $viewModel.isMuted) {
+                        EmptyView()
+                      }
+                      
                       Toggle("", isOn: Binding(
                         get: { selectedTheme == .red },
                         set: { if $0 { selectedTheme = .red }}

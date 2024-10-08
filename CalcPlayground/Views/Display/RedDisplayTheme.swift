@@ -75,6 +75,7 @@ struct RedDisplayTheme: View {
           .aspectRatio(1290/540, contentMode: .fill)
           .blendMode(.sourceAtop)
           .opacity(0.5)
+          .border(Color.init(white: 0.1), width: 3, edges: .bottom)
 
       }
 //      ZStack {

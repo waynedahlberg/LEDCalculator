@@ -29,6 +29,7 @@ class CalculatorViewModel: ObservableObject {
   @Published var displayValue: String = "0"
   @Published var computeText: String = ""
   @Published var buttons: [[CalculatorButton]] = []
+  @Published var isMuted: Bool = false
   
   private var currentNumber: Decimal = 0
   private var storedNumber: Decimal?
@@ -50,6 +51,10 @@ class CalculatorViewModel: ObservableObject {
   
   private func preloadSounds() {
     soundManager.preloadSounds(baseName: "button_press_", count: 2)
+  }
+  
+  func toggleMute() {
+    isMuted.toggle()
   }
   
   private func setupButtons() {
@@ -264,7 +269,9 @@ class CalculatorViewModel: ObservableObject {
   }
   
   func performAction(_ action: CalculatorAction) {
-    soundManager.playRandomSound()
+    if isMuted {
+      soundManager.playRandomSound()
+    }
     
     switch action {
     case .clear:
