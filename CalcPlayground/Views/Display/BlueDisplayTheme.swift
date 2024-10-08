@@ -63,7 +63,6 @@ struct BlueDisplayTheme: View {
           }
           .padding(.trailing, 8)
         }
-        
       }
       .padding(.trailing, 16.0)
       
@@ -76,7 +75,7 @@ struct BlueDisplayTheme: View {
           .aspectRatio(1290/540, contentMode: .fill)
           .blendMode(.sourceAtop)
           .opacity(0.5)
-
+          .border(Color.init(white: 0.1), width: 3, edges: .bottom)
       }
     }
   }

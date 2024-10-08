@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CalcButtonStyle: ButtonStyle {
-  var pressedScale: CGFloat = 0.9
+  var pressedScale: CGFloat = 0.95
   var animationDuration: Double = 0.1
   
   func makeBody(configuration: Configuration) -> some View {

@@ -13,37 +13,37 @@ struct CalculatorView: View {
   
   let keypadMargin: CGFloat = 16
   let gridSpacing: CGFloat = 4
-  
+    
   let svgData: [[String]] = [
-    ["clear", "negative", "percentage", "divide"],
-    ["number-7", "number-8", "number-9", "multiply"],
-    ["number-4", "number-5", "number-6", "minus"],
-    ["number-1", "number-2", "number-3", "plus"],
-    ["decimal", "number-0", "undo","equal"]
+    ["clear", "negative", "percentage", "undo"],
+    ["number-7", "number-8", "number-9", "divide"],
+    ["number-4", "number-5", "number-6", "multiply"],
+    ["number-1", "number-2", "number-3", "minus"],
+    ["decimal", "number-0", "equal","plus"]
   ]
   
   let charData: [[String]] = [
-    ["AC", "+/-", "%", "/"],
-    ["7", "8", "9", "X"],
-    ["4", "5", "6", "-"],
-    ["1", "2", "3", "+"],
-    ["←", "0", ".", "=z"]
+    ["AC", "-/+", "%",  "←"],
+    ["7", "8", "9", "/"],
+    ["4", "5", "6", "X"],
+    ["1", "2", "3", "-"],
+    ["←", "0", "+z", "+"]
   ]
   
   let keyColor: [[Color]] = [
-    [.clear, .clear, .clear, .clear],
-    [.clear, .clear, .clear, .clear],
-    [.clear, .clear, .clear, .clear],
-    [.clear, .clear, .clear, .clear],
-    [.clear, .clear, .red.opacity(0.05), .clear]
+    [.orange.opacity(0.1), .clear, .clear, .red.opacity(0.1)],
+    [.clear, .clear, .clear, .blue.opacity(0.1)],
+    [.clear, .clear, .clear, .blue.opacity(0.1)],
+    [.clear, .clear, .clear, .blue.opacity(0.1)],
+    [.clear, .clear, .green.opacity(0.1), .blue.opacity(0.1)]
   ]
   
   let charColor: [[Color]] = [
-    [.op1Gray, .op1Gray, .op1Gray, .op1Gray],
-    [.black, .black, .black, .op1Gray],
-    [.black, .black, .black, .op1Gray],
-    [.black, .black, .black, .op1Gray],
-    [.black, .black, .red, .op1Gray]
+    [Color(hex: "835000"), .op1Gray, .op1Gray, Color(hex: "7E0700")],
+    [.black, .black, .black, Color(hex: "003467")],
+    [.black, .black, .black, Color(hex: "003467")],
+    [.black, .black, .black, Color(hex: "003467")],
+    [.black, .black, Color(hex: "005F16"), Color(hex: "003467")]
   ]
   
   var body: some View {
@@ -58,7 +58,7 @@ struct CalculatorView: View {
             RoundedRectangle(cornerRadius: 13.33, style: .continuous)
               .fill(.black)
 //              .border(.blue, width: 10)
-              .ignoresSafeArea(edges: [.top, .bottom])
+//              .ignoresSafeArea(edges: [.top, .bottom])
 //              .overlay {
 //                GeometryReader { geo in
 //                  // Just for testing, prints out the dimensions of the Geometry Proxy
@@ -67,14 +67,25 @@ struct CalculatorView: View {
 //                }
 //              }
             VStack {
-              Rectangle().fill(Color.init(white: 0.1))
-                .ignoresSafeArea(edges: .top)
-                .border(Color.init(white: 0.125), width: 2, edges: .bottom)
-                .frame(height: 128)
-              Spacer()
+              Rectangle()
+                .overlay {
+                  ZStack {
+                    Image("swiftinstruments")
+                      .resizable()
+                      .foregroundStyle(.black.opacity(0.75))
+                      .aspectRatio(contentMode: .fit)
+                      .frame(height: 16)
+                      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                      .padding(12)
+                      .shadow(color: .white.opacity(0.25), radius: 0.5, x: 0, y: 0.5)
+                  }
+                  .background(Color.init(white: 0.15))
+                }
+                .border(Color.init(white: 0.18), width: 2, edges: .bottom)
+//              Spacer()
               BlueDisplayTheme(
                 largeFontSize: UIDevice.isTablet ? 64 : 44,
-                smallFontSize: UIDevice.isTablet ? 24 : 16, resultText: "3.14159265", computeText: "1234567890+-/*")
+                smallFontSize: UIDevice.isTablet ? 24 : 16, resultText: "0", computeText: "")
               .aspectRatio(2.32, contentMode: .fill)
               .frame(width: proxy.size.width)
 //              .border(.green, width: 4)
@@ -84,27 +95,30 @@ struct CalculatorView: View {
           
           Spacer() // if needed?
           
-          ForEach(0..<5, id:\.self) { row in
-            HStack(spacing: gridSpacing) {
-              ForEach(0..<4, id:\.self) { rect in
-                let character = svgData[row][rect]
-                let charColor = charColor[row][rect]
-                let keyColor = keyColor[row][rect]
-                Button(action: {
-                  print("b")
-                  Haptics.shared.play(.light)
-                }, label: {
-                  OP1ButtonView(charString: character,
-                                charColor: charColor,
-                                keyColor: keyColor)
-                  .frame(width: horizontalSizeClass == .compact ? (proxy.size.width - keypadMargin) / 4 : 128,
-                         height: horizontalSizeClass == .compact ? (proxy.size.width - keypadMargin) / 4 : 128,
-                         alignment: .center)
-                })
-                .buttonStyle(CalcButtonStyle())
+          VStack {
+            ForEach(0..<5, id:\.self) { row in
+              HStack(spacing: gridSpacing) {
+                ForEach(0..<4, id:\.self) { rect in
+                  let character = svgData[row][rect]
+                  let charColor = charColor[row][rect]
+                  let keyColor = keyColor[row][rect]
+                  Button(action: {
+                    print("b")
+                    Haptics.shared.play(.light)
+                  }, label: {
+                    OP1ButtonView(charString: character,
+                                  charColor: charColor,
+                                  keyColor: keyColor)
+                    .frame(width: horizontalSizeClass == .compact ? (proxy.size.width - keypadMargin) / 4 : 128,
+                           height: horizontalSizeClass == .compact ? (proxy.size.width - keypadMargin) / 4 : 128,
+                           alignment: .center)
+                  })
+                  .buttonStyle(CalcButtonStyle())
+                }
               }
             }
           }
+//          .border(.purple)
         }
         .position(x: proxy.size.width / 2, y: proxy.size.height / 2)
       }
