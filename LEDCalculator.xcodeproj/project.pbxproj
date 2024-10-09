@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		B0DAF1DC2CB44B4200ED9B24 /* Exceptions for "CalcPlayground" folder in "CalcPlayground" target */ = {
+		B0DAF1DC2CB44B4200ED9B24 /* Exceptions for "LEDCalculator" folder in "CalcPlayground" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -21,12 +21,12 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		B0DAF17F2CB43F3F00ED9B24 /* CalcPlayground */ = {
+		B0DAF17F2CB43F3F00ED9B24 /* LEDCalculator */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				B0DAF1DC2CB44B4200ED9B24 /* Exceptions for "CalcPlayground" folder in "CalcPlayground" target */,
+				B0DAF1DC2CB44B4200ED9B24 /* Exceptions for "LEDCalculator" folder in "CalcPlayground" target */,
 			);
-			path = CalcPlayground;
+			path = LEDCalculator;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,7 +45,7 @@
 		B0DAF1742CB43F3F00ED9B24 = {
 			isa = PBXGroup;
 			children = (
-				B0DAF17F2CB43F3F00ED9B24 /* CalcPlayground */,
+				B0DAF17F2CB43F3F00ED9B24 /* LEDCalculator */,
 				B0DAF17E2CB43F3F00ED9B24 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +74,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				B0DAF17F2CB43F3F00ED9B24 /* CalcPlayground */,
+				B0DAF17F2CB43F3F00ED9B24 /* LEDCalculator */,
 			);
 			name = CalcPlayground;
 			packageProductDependencies = (
@@ -98,7 +98,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0DAF1782CB43F3F00ED9B24 /* Build configuration list for PBXProject "CalcPlayground" */;
+			buildConfigurationList = B0DAF1782CB43F3F00ED9B24 /* Build configuration list for PBXProject "LEDCalculator" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -320,7 +320,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0DAF1782CB43F3F00ED9B24 /* Build configuration list for PBXProject "CalcPlayground" */ = {
+		B0DAF1782CB43F3F00ED9B24 /* Build configuration list for PBXProject "LEDCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0DAF1892CB43F4000ED9B24 /* Debug */,

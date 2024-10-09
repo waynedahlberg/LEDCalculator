@@ -1,6 +1,6 @@
 //
 //  SoundManager.swift
-//  CalcPlayground
+//  LEDCalculator
 //
 //  Created by Wayne Dahlberg on 10/8/24.
 //
