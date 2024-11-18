@@ -1,4 +1,4 @@
-![File Cover](filecover.jpg)
+![File Cover](https://res.cloudinary.com/dewmpixcd/image/upload/v1731959949/github/calculator_kduiuy.jpg)
 
 # LED Calculator
 
