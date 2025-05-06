@@ -2,4 +2,4 @@
 
 # LED Calculator
 
-A fun and simple calculator with a vintage LED display, styled keycaps and sound effects.
+A fun and simple calculator with a vintage LED display, styled keycaps and sound effects. Please raise any issues you find.
